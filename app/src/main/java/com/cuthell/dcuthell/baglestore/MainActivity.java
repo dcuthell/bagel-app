@@ -1,4 +1,4 @@
-package com.example.dcuthell.baglestore;
+package com.cuthell.dcuthell.baglestore;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
