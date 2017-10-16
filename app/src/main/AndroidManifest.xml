@@ -21,8 +21,9 @@
         <activity android:name=".SignIn">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.cuthell.dcuthell.baglestore.MainActivity"></meta-data>
+                android:value="com.cuthell.dcuthell.baglestore.MainActivity" />
         </activity>
+        <activity android:name=".SignUp"></activity>
     </application>
 
 </manifest>
