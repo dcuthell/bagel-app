@@ -38,35 +38,35 @@
         app:layout_constraintVertical_bias="0.19999999" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/usernameInputText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
+        android:hint="Username"
         android:inputType="textPersonName"
-        android:text="Username"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintBottom_toTopOf="@+id/passwordInputText"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/passwordInputText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
-        android:inputType="textVisiblePassword"
-        android:text="Password"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/signInButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/signInButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -85,8 +85,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Username"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editText2"
-        app:layout_constraintRight_toLeftOf="@+id/editText2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/usernameInputText"
+        app:layout_constraintRight_toLeftOf="@+id/usernameInputText"
         android:layout_marginRight="8dp" />
 
     <TextView
@@ -94,7 +94,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editText3"
-        app:layout_constraintRight_toLeftOf="@+id/editText3"
+        app:layout_constraintBaseline_toBaselineOf="@+id/passwordInputText"
+        app:layout_constraintRight_toLeftOf="@+id/passwordInputText"
         android:layout_marginRight="8dp" />
 </android.support.constraint.ConstraintLayout>

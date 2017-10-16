@@ -33,6 +33,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cuthell.dcuthell.baglestore.MainActivity" />
         </activity>
+        <activity
+            android:name=".Welcome"
+            android:theme="@style/NoActionBarTheme">
+
+        </activity>
     </application>
 
 </manifest>
