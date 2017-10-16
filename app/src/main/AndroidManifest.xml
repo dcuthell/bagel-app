@@ -23,7 +23,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cuthell.dcuthell.baglestore.MainActivity" />
         </activity>
-        <activity android:name=".SignUp"></activity>
+        <activity android:name=".SignUp">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cuthell.dcuthell.baglestore.MainActivity" />
+        </activity>
+        <activity android:name=".About">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cuthell.dcuthell.baglestore.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
