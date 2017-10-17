@@ -1,7 +1,10 @@
 package com.cuthell.dcuthell.baglestore;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.DialogFragment;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +17,7 @@ import android.widget.Toast;
 
 import com.cuthell.dcuthell.baglestore.R;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import butterknife.Bind;
@@ -24,11 +28,12 @@ import butterknife.Bind;
 
 public class NewItemFragment extends DialogFragment{
 
-
+    Activity context;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_newitem, container, false);
         final Bagel newBagel = new Bagel();
+        context = getActivity();
 
         Button cancelButton = (Button) rootView.findViewById(R.id.cancelButton);
         Button addButton = (Button) rootView.findViewById(R.id.addButton);
@@ -76,7 +81,10 @@ public class NewItemFragment extends DialogFragment{
                     newBagel.addTopping("Turkey Bacon");
                 }
                 output += newBagel.getToppings();
-                Log.d("testing", output);
+                Intent intent = new Intent(context, NewOrder.class);
+                Bundle bundle = new Bundle();
+                intent.putExtra("bagelType", newBagel.getType());
+                intent.putExtra("bagelToppings", newBagel.getToppings());
                 dismiss();
             }
         });
