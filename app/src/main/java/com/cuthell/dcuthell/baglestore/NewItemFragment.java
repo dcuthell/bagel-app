@@ -33,6 +33,7 @@ public class NewItemFragment extends DialogFragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_newitem, container, false);
         final Bagel newBagel = new Bagel();
+
         context = getActivity();
 
         Button cancelButton = (Button) rootView.findViewById(R.id.cancelButton);
@@ -83,9 +84,10 @@ public class NewItemFragment extends DialogFragment{
                 output += newBagel.getToppings();
                 Intent intent = new Intent(context, NewOrder.class);
                 Bundle bundle = new Bundle();
-                intent.putExtra("bagelType", newBagel.getType());
-                intent.putExtra("bagelToppings", newBagel.getToppings());
-                dismiss();
+                intent.putExtra("bagelType", "BAAAAAAAAAA");
+                startActivity(intent);
+//                intent.putExtra("bagelToppings", newBagel.getToppings());
+//                dismiss();
             }
         });
 

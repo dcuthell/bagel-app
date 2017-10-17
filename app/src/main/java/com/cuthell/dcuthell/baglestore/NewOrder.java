@@ -4,6 +4,7 @@ package com.cuthell.dcuthell.baglestore;
 import android.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -21,7 +22,7 @@ public class NewOrder extends AppCompatActivity {
     @Bind(R.id.itemList) ListView mItemList;
     @Bind(R.id.addItemButton) Button mAddItemButton;
     @Bind(R.id.submitOrderButton) Button mSubmitOrderButton;
-    private ArrayList<Bagel> bagelList = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +33,9 @@ public class NewOrder extends AppCompatActivity {
 
         final FragmentManager fm = getFragmentManager();
         final NewItemFragment newItemFragment = new NewItemFragment();
-        newItemFragment.show(fm, "This means nothing");
 
+        ArrayList<Bagel> bagelList = new ArrayList<>();
+        Log.d("testing", "RESET CRAP");
         Bagel testBagel = new Bagel();
         testBagel.setType("Plain");
         testBagel.addTopping("Cheese");
@@ -56,11 +58,12 @@ public class NewOrder extends AppCompatActivity {
     public void onStart(){
         super.onStart();
         Bagel newBagel = new Bagel();
-        newBagel.setType(getIntent().getStringExtra("bagelType"));
-        bagelList.add(newBagel);
+        String test = getIntent().getStringExtra("bagelType");
 
-        BagelArrayAdapter adapter = new BagelArrayAdapter(this, android.R.layout.simple_list_item_1, bagelList);
-        mItemList.setAdapter(adapter);
+        Log.d("testing", "STARTING TOO?");
+//
+//        BagelArrayAdapter adapter = new BagelArrayAdapter(this, android.R.layout.simple_list_item_1, bagelList);
+//        mItemList.setAdapter(adapter);
 
 
     }
