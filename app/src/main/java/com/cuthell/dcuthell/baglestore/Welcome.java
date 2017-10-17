@@ -28,7 +28,8 @@ public class Welcome extends AppCompatActivity {
         mNewOrderButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-
+                Intent intent = new Intent(Welcome.this, NewOrder.class);
+                startActivity(intent);
             }
         });
 

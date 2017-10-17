@@ -36,7 +36,11 @@
         <activity
             android:name=".Welcome"
             android:theme="@style/NoActionBarTheme"></activity>
-        <activity android:name=".NewOrder"></activity>
+        <activity android:name=".NewOrder">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cuthell.dcuthell.baglestore.Welcome" />
+        </activity>
     </application>
 
 </manifest>
