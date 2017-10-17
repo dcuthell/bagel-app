@@ -27,6 +27,9 @@ public class Bagel {
         return toppings;
     }
 
+    public void setToppings(ArrayList<String> toppings) {
+        this.toppings = toppings;
+    }
     public void addTopping(String topping) {
         this.toppings.add(topping);
     }

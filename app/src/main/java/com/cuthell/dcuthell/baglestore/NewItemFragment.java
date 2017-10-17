@@ -62,7 +62,7 @@ public class NewItemFragment extends DialogFragment{
                 final RadioButton bagelTypeRadioButton = (RadioButton) rootView.findViewById(bagelTypeId);
                 String selection = bagelTypeRadioButton.getText().toString();
                 newBagel.setType(selection);
-                String output = "You selected a " + newBagel.getType();
+
                 if(cheddarCheckBox.isChecked()){
                     newBagel.addTopping("Cheddar Cheese");
                 }
@@ -81,12 +81,11 @@ public class NewItemFragment extends DialogFragment{
                 if(turkeyCheckBox.isChecked()){
                     newBagel.addTopping("Turkey Bacon");
                 }
-                output += newBagel.getToppings();
+
                 Intent intent = new Intent(context, NewOrder.class);
                 intent.putExtra("bagelType", newBagel.getType());
+                intent.putExtra("bagelToppings", newBagel.getToppings());
                 startActivity(intent);
-//                intent.putExtra("bagelToppings", newBagel.getToppings());
-//                dismiss();
             }
         });
 

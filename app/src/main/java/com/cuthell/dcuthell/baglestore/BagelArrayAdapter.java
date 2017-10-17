@@ -42,11 +42,11 @@ public class BagelArrayAdapter extends ArrayAdapter {
             return output;
         }
         if(toppings.size() < 3){
-            output += " with " + toppings.get(0) + " and " + toppings.get(1);
+            output += " With " + toppings.get(0) + " and " + toppings.get(1);
             return output;
         }
         else{
-            output += " with " + toppings.get(0);
+            output += " With " + toppings.get(0);
             for(int i = 1; i < (toppings.size()-1); i++){
                 output += ", " + toppings.get(i);
             }

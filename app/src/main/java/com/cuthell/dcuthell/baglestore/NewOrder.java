@@ -46,34 +46,35 @@ public class NewOrder extends AppCompatActivity {
 
     public void onStart(){
         super.onStart();
-        String test = "Lame";
 
-        Log.d("testing", "RESET CRAP");
-        Bagel testBagel = new Bagel();
-        testBagel.setType("Plain");
-        testBagel.addTopping("Cheese");
-        testBagel.addTopping("Cheese1");
-        testBagel.addTopping("Cheese2");
-        bagelList.add(testBagel);
-
+        //Test Data
+        Bagel testBagel1 = new Bagel();
+        testBagel1.setType("Plain");
+        testBagel1.addTopping("Test Topping 1");
+        bagelList.add(testBagel1);
+        Bagel testBagel2 = new Bagel();
+        testBagel2.setType("Plain");
+        testBagel2.addTopping("Test Topping 1");
+        testBagel2.addTopping("Test Topping 2");
+        bagelList.add(testBagel2);
+        Bagel testBagel3 = new Bagel();
+        testBagel3.setType("Plain");
+        testBagel3.addTopping("Test Topping 1");
+        testBagel3.addTopping("Test Topping 2");
+        testBagel3.addTopping("Test Topping 3");
+        bagelList.add(testBagel3);
+        //End Test Data
 
         if(getIntent().getStringExtra("bagelType") != null){
-            test = getIntent().getStringExtra("bagelType");
+//            test = getIntent().getStringExtra("bagelType");
             Bagel newBagel = new Bagel();
-            newBagel.setType(test);
-            test = newBagel.getType() + "WOOOO";
+            newBagel.setType(getIntent().getStringExtra("bagelType"));
+            newBagel.setToppings((ArrayList<String>)getIntent().getSerializableExtra("bagelToppings"));
             bagelList.add(newBagel);
         }
 
         BagelArrayAdapter adapter = new BagelArrayAdapter(this, android.R.layout.simple_list_item_1, bagelList);
         mItemList.setAdapter(adapter);
-
-        Log.d("testing", test);
-//
-//        BagelArrayAdapter adapter = new BagelArrayAdapter(this, android.R.layout.simple_list_item_1, bagelList);
-//        mItemList.setAdapter(adapter);
-
-
     }
 
 }
