@@ -23,6 +23,8 @@ public class NewOrder extends AppCompatActivity {
     @Bind(R.id.addItemButton) Button mAddItemButton;
     @Bind(R.id.submitOrderButton) Button mSubmitOrderButton;
 
+    private ArrayList<Bagel> bagelList = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,24 +33,11 @@ public class NewOrder extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        final FragmentManager fm = getFragmentManager();
-        final NewItemFragment newItemFragment = new NewItemFragment();
-
-        ArrayList<Bagel> bagelList = new ArrayList<>();
-        Log.d("testing", "RESET CRAP");
-        Bagel testBagel = new Bagel();
-        testBagel.setType("Plain");
-        testBagel.addTopping("Cheese");
-        testBagel.addTopping("Cheese1");
-        testBagel.addTopping("Cheese2");
-        bagelList.add(testBagel);
-
-        BagelArrayAdapter adapter = new BagelArrayAdapter(this, android.R.layout.simple_list_item_1, bagelList);
-        mItemList.setAdapter(adapter);
-
         mAddItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FragmentManager fm = getFragmentManager();
+                NewItemFragment newItemFragment = new NewItemFragment();
                 newItemFragment.show(fm, "This means nothing");
             }
         });
@@ -57,10 +46,29 @@ public class NewOrder extends AppCompatActivity {
 
     public void onStart(){
         super.onStart();
-        Bagel newBagel = new Bagel();
-        String test = getIntent().getStringExtra("bagelType");
+        String test = "Lame";
 
-        Log.d("testing", "STARTING TOO?");
+        Log.d("testing", "RESET CRAP");
+        Bagel testBagel = new Bagel();
+        testBagel.setType("Plain");
+        testBagel.addTopping("Cheese");
+        testBagel.addTopping("Cheese1");
+        testBagel.addTopping("Cheese2");
+        bagelList.add(testBagel);
+
+
+        if(getIntent().getStringExtra("bagelType") != null){
+            test = getIntent().getStringExtra("bagelType");
+            Bagel newBagel = new Bagel();
+            newBagel.setType(test);
+            test = newBagel.getType() + "WOOOO";
+            bagelList.add(newBagel);
+        }
+
+        BagelArrayAdapter adapter = new BagelArrayAdapter(this, android.R.layout.simple_list_item_1, bagelList);
+        mItemList.setAdapter(adapter);
+
+        Log.d("testing", test);
 //
 //        BagelArrayAdapter adapter = new BagelArrayAdapter(this, android.R.layout.simple_list_item_1, bagelList);
 //        mItemList.setAdapter(adapter);

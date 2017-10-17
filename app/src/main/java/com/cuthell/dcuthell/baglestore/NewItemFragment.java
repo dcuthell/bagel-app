@@ -83,8 +83,7 @@ public class NewItemFragment extends DialogFragment{
                 }
                 output += newBagel.getToppings();
                 Intent intent = new Intent(context, NewOrder.class);
-                Bundle bundle = new Bundle();
-                intent.putExtra("bagelType", "BAAAAAAAAAA");
+                intent.putExtra("bagelType", newBagel.getType());
                 startActivity(intent);
 //                intent.putExtra("bagelToppings", newBagel.getToppings());
 //                dismiss();
