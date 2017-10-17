@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.DialogFragment;
-import android.os.Parcelable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,14 +11,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
-import com.cuthell.dcuthell.baglestore.R;
-
-import java.io.Serializable;
-import java.util.ArrayList;
-
-import butterknife.Bind;
 
 /**
  * Created by dcuthell on 10/16/2017.

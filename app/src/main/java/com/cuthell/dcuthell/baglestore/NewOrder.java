@@ -2,12 +2,13 @@ package com.cuthell.dcuthell.baglestore;
 
 
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 import com.cuthell.dcuthell.baglestore.R;
@@ -38,7 +39,16 @@ public class NewOrder extends AppCompatActivity {
             public void onClick(View v) {
                 FragmentManager fm = getFragmentManager();
                 NewItemFragment newItemFragment = new NewItemFragment();
-                newItemFragment.show(fm, "This means nothing");
+                newItemFragment.show(fm, "newItem");
+            }
+        });
+
+        mSubmitOrderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(NewOrder.this, "Order Submitted", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(NewOrder.this, Welcome.class);
+                startActivity(intent);
             }
         });
 

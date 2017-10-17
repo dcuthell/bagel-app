@@ -36,7 +36,7 @@ public class Welcome extends AppCompatActivity {
         mViewOrdersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-
+                Toast.makeText(Welcome.this, "Coming Soon", Toast.LENGTH_SHORT).show();
             }
         });
 
