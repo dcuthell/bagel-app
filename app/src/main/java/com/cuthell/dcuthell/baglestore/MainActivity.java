@@ -1,10 +1,12 @@
 package com.cuthell.dcuthell.baglestore;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -14,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.signInButton) Button mSignInButton;
     @Bind(R.id.signUpButton) Button mSignUpButton;
     @Bind(R.id.aboutButton) Button mAboutButton;
+    @Bind(R.id.welcomeText) TextView mWelcomeText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
+
+        Typeface keepOnTruckinFont = Typeface.createFromAsset(getAssets(), "fonts/keepOnTruckin.ttf");
+        mWelcomeText.setTypeface(keepOnTruckinFont);
 
         mSignInButton.setOnClickListener(new View.OnClickListener(){
             @Override
