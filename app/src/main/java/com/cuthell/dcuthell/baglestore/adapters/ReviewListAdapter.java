@@ -22,12 +22,12 @@ import butterknife.ButterKnife;
  */
 
 public class ReviewListAdapter extends RecyclerView.Adapter<ReviewListAdapter.ReviewViewHolder> {
-    private ArrayList<Review> mReviews = new ArrayList<>();
     private Context mContext;
+    private ArrayList<Review> mReviews = new ArrayList<>();
 
-    public ReviewListAdapter(Context context, ArrayList<Review> mReviews) {
+    public ReviewListAdapter(Context mContext, ArrayList<Review> mReviews) {
+        this.mContext = mContext;
         this.mReviews = mReviews;
-        this.mContext = context;
     }
 
     public class ReviewViewHolder extends RecyclerView.ViewHolder {
@@ -44,9 +44,9 @@ public class ReviewListAdapter extends RecyclerView.Adapter<ReviewListAdapter.Re
 
         public void bindReview(Review review){
             mReviewTextView.setText(review.getText());
-            if(review.getUser().size() > 1 ){
-                Picasso.with(mContext).load(review.getUser().get(0)).into(mReviewImageView);
-            }
+//            if(review.getUser().size() > 1 ){
+//                Picasso.with(mContext).load(review.getUser().get(0)).into(mReviewImageView);
+//            }
         }
 
     }
