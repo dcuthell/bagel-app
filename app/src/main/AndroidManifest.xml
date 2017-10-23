@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,28 +20,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignIn">
+        <activity android:name=".ui.SignIn">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.cuthell.dcuthell.baglestore.MainActivity" />
+                android:value="com.cuthell.dcuthell.baglestore.ui.MainActivity" />
         </activity>
-        <activity android:name=".SignUp">
+        <activity android:name=".ui.SignUp">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.cuthell.dcuthell.baglestore.MainActivity" />
+                android:value="com.cuthell.dcuthell.baglestore.ui.MainActivity" />
         </activity>
-        <activity android:name=".About">
+        <activity android:name=".ui.About">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.cuthell.dcuthell.baglestore.MainActivity" />
+                android:value="com.cuthell.dcuthell.baglestore.ui.MainActivity" />
         </activity>
         <activity
-            android:name=".Welcome"
+            android:name=".ui.Welcome"
             android:theme="@style/NoActionBarTheme"></activity>
-        <activity android:name=".NewOrder">
+        <activity android:name=".ui.NewOrder">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.cuthell.dcuthell.baglestore.Welcome" />
+                android:value="com.cuthell.dcuthell.baglestore.ui.Welcome" />
         </activity>
     </application>
 

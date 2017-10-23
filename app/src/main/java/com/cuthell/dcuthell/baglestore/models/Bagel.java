@@ -1,4 +1,4 @@
-package com.cuthell.dcuthell.baglestore;
+package com.cuthell.dcuthell.baglestore.models;
 
 import java.util.ArrayList;
 

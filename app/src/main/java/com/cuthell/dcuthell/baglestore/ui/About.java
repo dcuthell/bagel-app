@@ -1,26 +1,24 @@
-package com.cuthell.dcuthell.baglestore;
+package com.cuthell.dcuthell.baglestore.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import com.cuthell.dcuthell.baglestore.R;
+import com.cuthell.dcuthell.baglestore.services.YelpService;
 import com.cuthell.dcuthell.baglestore.models.Review;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-import butterknife.Bind;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
 public class About extends AppCompatActivity {
 
-    @Bind(R.id.locationTextView) TextView mLocationTextView;
-    @Bind(R.id.listView) ListView mListView;
+//    @Bind(R.id.locationTextView) TextView mLocationTextView;
+//    @Bind(R.id.listView) ListView mListView;
 
     public ArrayList<Review> reviews = new ArrayList<>();
 
@@ -42,16 +40,16 @@ public class About extends AppCompatActivity {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                try{
-                    String jsonData = response.body().string();
-                    if(response.isSuccessful()){
-                        Log.v("TESTING", jsonData);
-                        reviews = yelpService.processResults(response);
-                    }
+                reviews = yelpService.processResults(response);
 
-                } catch(IOException e){
-                    e.printStackTrace();
-                }
+                About.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        for (Review review : reviews) {
+                            Log.d("TESTTTTTTTTTTTTT", "URL " +review.getUrl());
+                        }
+                    }
+                });
             }
         });
     }

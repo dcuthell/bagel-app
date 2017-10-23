@@ -1,5 +1,8 @@
-package com.cuthell.dcuthell.baglestore;
+package com.cuthell.dcuthell.baglestore.services;
 
+import android.util.Log;
+
+import com.cuthell.dcuthell.baglestore.Constants;
 import com.cuthell.dcuthell.baglestore.models.Review;
 
 import org.json.JSONArray;

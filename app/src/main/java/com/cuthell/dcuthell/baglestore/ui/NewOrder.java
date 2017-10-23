@@ -1,4 +1,4 @@
-package com.cuthell.dcuthell.baglestore;
+package com.cuthell.dcuthell.baglestore.ui;
 
 
 import android.app.FragmentManager;
@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 
 import com.cuthell.dcuthell.baglestore.R;
+import com.cuthell.dcuthell.baglestore.models.Bagel;
 
 import java.util.ArrayList;
 

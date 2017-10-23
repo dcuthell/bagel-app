@@ -1,4 +1,4 @@
-package com.cuthell.dcuthell.baglestore;
+package com.cuthell.dcuthell.baglestore.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

@@ -1,7 +1,9 @@
-package com.cuthell.dcuthell.baglestore;
+package com.cuthell.dcuthell.baglestore.ui;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;
+
+import com.cuthell.dcuthell.baglestore.models.Bagel;
 
 import java.util.ArrayList;
 
