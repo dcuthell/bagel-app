@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion "26.0.2"
+    useLibrary 'org.apache.http.legacy'
     defaultConfig {
         applicationId "com.example.dcuthell.baglestore"
         minSdkVersion 23
@@ -33,4 +34,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:recyclerview-v7:+'
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }
