@@ -1,10 +1,13 @@
 package com.cuthell.dcuthell.baglestore.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,8 +34,9 @@ public class ReviewListAdapter extends RecyclerView.Adapter<ReviewListAdapter.Re
     }
 
     public class ReviewViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.reviewImageView) ImageView mReviewImageView;
+//        @Bind(R.id.reviewImageView) ImageView mReviewImageView;
         @Bind(R.id.reviewTextView) TextView mReviewTextView;
+        @Bind(R.id.readMoreButton) Button mReadMoreButton;
 
         private Context context;
 
@@ -42,11 +46,18 @@ public class ReviewListAdapter extends RecyclerView.Adapter<ReviewListAdapter.Re
             mContext = itemView.getContext();
         }
 
-        public void bindReview(Review review){
+        public void bindReview(final Review review){
             mReviewTextView.setText(review.getText());
 //            if(review.getUser().size() > 1 ){
 //                Picasso.with(mContext).load(review.getUser().get(0)).into(mReviewImageView);
 //            }
+            mReadMoreButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(review.getUrl()));
+                    mContext.startActivity(webIntent);
+                }
+            });
         }
 
     }
