@@ -15,6 +15,8 @@ import android.widget.RadioGroup;
 import com.cuthell.dcuthell.bagelstore.R;
 import com.cuthell.dcuthell.bagelstore.models.Bagel;
 
+import org.parceler.Parcels;
+
 
 /**
  * Created by dcuthell on 10/16/2017.
@@ -77,12 +79,10 @@ public class NewItemFragment extends DialogFragment{
                 }
 
                 Intent intent = new Intent(context, NewOrder.class);
-                intent.putExtra("bagelType", newBagel.getType());
-                intent.putExtra("bagelToppings", newBagel.getToppings());
+                intent.putExtra("bagel", Parcels.wrap(newBagel));
                 startActivity(intent);
             }
         });
-
 
         return rootView;
     }

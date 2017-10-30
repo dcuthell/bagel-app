@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter;
 import com.cuthell.dcuthell.bagelstore.models.Bagel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by dcuthell on 10/16/2017.
@@ -35,7 +36,7 @@ public class BagelArrayAdapter extends ArrayAdapter {
     public String getBagelDetails(int bagelId){
         String output = "";
         Bagel selectedBagel = mBagelList.get(bagelId);
-        ArrayList<String> toppings = selectedBagel.getToppings();
+        List<String> toppings = selectedBagel.getToppings();
         if(toppings.size() < 1 ){
             return output;
         }

@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -13,6 +14,8 @@ import android.widget.Toast;
 
 import com.cuthell.dcuthell.bagelstore.R;
 import com.cuthell.dcuthell.bagelstore.models.Bagel;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -76,13 +79,19 @@ public class NewOrder extends AppCompatActivity {
         bagelList.add(testBagel3);
         //End Test Data
 
-        if(getIntent().getStringExtra("bagelType") != null){
-//            test = getIntent().getStringExtra("bagelType");
-            Bagel newBagel = new Bagel();
-            newBagel.setType(getIntent().getStringExtra("bagelType"));
-            newBagel.setToppings((ArrayList<String>)getIntent().getSerializableExtra("bagelToppings"));
+//        if(getIntent().getStringExtra("bagelType") != null){
+////            test = getIntent().getStringExtra("bagelType");
+//            Bagel newBagel = new Bagel();
+//            newBagel.setType(getIntent().getStringExtra("bagelType"));
+//            newBagel.setToppings((ArrayList<String>)getIntent().getSerializableExtra("bagelToppings"));
+//            bagelList.add(newBagel);
+//        }
+        if(getIntent().getExtras() != null){
+            Bagel newBagel = Parcels.unwrap(getIntent().getParcelableExtra("bagel"));
+            Log.d("TEEEEST", newBagel.getType());
             bagelList.add(newBagel);
         }
+
 
         BagelArrayAdapter adapter = new BagelArrayAdapter(this, android.R.layout.simple_list_item_1, bagelList);
         mItemList.setAdapter(adapter);
