@@ -1,6 +1,7 @@
 package com.cuthell.dcuthell.bagelstore.models;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by dcuthell on 10/16/2017.
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 
 public class Bagel {
     public String type;
-    public ArrayList<String> toppings;
+    public List<String> toppings;
 
     public Bagel(){
         this.type = "None";
@@ -23,7 +24,7 @@ public class Bagel {
         this.type = type;
     }
 
-    public ArrayList<String> getToppings() {
+    public List<String> getToppings() {
         return toppings;
     }
 
