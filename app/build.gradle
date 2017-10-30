@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.2"
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
-        applicationId "com.cuthell.dcuthell.baglestore"
+        applicationId "com.cuthell.dcuthell.bagelstore"
         minSdkVersion 23
         targetSdkVersion 25
         versionCode 1

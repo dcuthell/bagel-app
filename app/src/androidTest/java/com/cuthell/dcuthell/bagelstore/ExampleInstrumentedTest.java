@@ -1,4 +1,4 @@
-package com.cuthell.dcuthell.baglestore;
+package com.cuthell.dcuthell.bagelstore;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.dcuthell.baglestore", appContext.getPackageName());
+        assertEquals("com.example.dcuthell.bagelstore", appContext.getPackageName());
     }
 }

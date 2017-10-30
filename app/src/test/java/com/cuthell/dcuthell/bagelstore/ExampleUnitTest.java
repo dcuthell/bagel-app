@@ -1,4 +1,4 @@
-package com.cuthell.dcuthell.baglestore;
+package com.cuthell.dcuthell.bagelstore;
 
 import org.junit.Test;
 

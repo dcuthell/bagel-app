@@ -1,4 +1,4 @@
-package com.cuthell.dcuthell.baglestore.ui;
+package com.cuthell.dcuthell.bagelstore.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.cuthell.dcuthell.baglestore.R;
+import com.cuthell.dcuthell.bagelstore.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

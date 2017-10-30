@@ -1,9 +1,7 @@
-package com.cuthell.dcuthell.baglestore.services;
+package com.cuthell.dcuthell.bagelstore.services;
 
-import android.util.Log;
-
-import com.cuthell.dcuthell.baglestore.Constants;
-import com.cuthell.dcuthell.baglestore.models.Review;
+import com.cuthell.dcuthell.bagelstore.Constants;
+import com.cuthell.dcuthell.bagelstore.models.Review;
 
 import org.json.JSONArray;
 import org.json.JSONException;

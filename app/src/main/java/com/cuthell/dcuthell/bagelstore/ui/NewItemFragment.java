@@ -1,4 +1,4 @@
-package com.cuthell.dcuthell.baglestore.ui;
+package com.cuthell.dcuthell.bagelstore.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,8 +12,8 @@ import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.cuthell.dcuthell.baglestore.R;
-import com.cuthell.dcuthell.baglestore.models.Bagel;
+import com.cuthell.dcuthell.bagelstore.R;
+import com.cuthell.dcuthell.bagelstore.models.Bagel;
 
 
 /**

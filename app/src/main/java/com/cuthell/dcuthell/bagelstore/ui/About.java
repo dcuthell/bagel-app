@@ -1,4 +1,4 @@
-package com.cuthell.dcuthell.baglestore.ui;
+package com.cuthell.dcuthell.bagelstore.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,10 +6,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
-import com.cuthell.dcuthell.baglestore.R;
-import com.cuthell.dcuthell.baglestore.adapters.ReviewListAdapter;
-import com.cuthell.dcuthell.baglestore.services.YelpService;
-import com.cuthell.dcuthell.baglestore.models.Review;
+import com.cuthell.dcuthell.bagelstore.R;
+import com.cuthell.dcuthell.bagelstore.adapters.ReviewListAdapter;
+import com.cuthell.dcuthell.bagelstore.services.YelpService;
+import com.cuthell.dcuthell.bagelstore.models.Review;
 
 import java.io.IOException;
 import java.util.ArrayList;

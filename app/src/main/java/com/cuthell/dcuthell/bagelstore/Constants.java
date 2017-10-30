@@ -1,6 +1,4 @@
-package com.cuthell.dcuthell.baglestore;
-
-import com.cuthell.dcuthell.baglestore.BuildConfig;
+package com.cuthell.dcuthell.bagelstore;
 
 /**
  * Created by dcuthell on 10/22/2017.

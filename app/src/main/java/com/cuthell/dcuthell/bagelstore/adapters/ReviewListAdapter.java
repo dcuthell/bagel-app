@@ -1,4 +1,4 @@
-package com.cuthell.dcuthell.baglestore.adapters;
+package com.cuthell.dcuthell.bagelstore.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,12 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.cuthell.dcuthell.baglestore.R;
-import com.cuthell.dcuthell.baglestore.models.Review;
-import com.squareup.picasso.Picasso;
+import com.cuthell.dcuthell.bagelstore.R;
+import com.cuthell.dcuthell.bagelstore.models.Review;
 
 import java.util.ArrayList;
 
