@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.2"
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
-        applicationId "com.example.dcuthell.baglestore"
+        applicationId "com.cuthell.dcuthell.baglestore"
         minSdkVersion 23
         targetSdkVersion 25
         versionCode 1
@@ -36,3 +36,5 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
 }
+
+apply plugin: 'com.google.gms.google-services'
