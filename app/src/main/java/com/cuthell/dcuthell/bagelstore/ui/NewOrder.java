@@ -88,7 +88,6 @@ public class NewOrder extends AppCompatActivity {
 //        }
         if(getIntent().getExtras() != null){
             Bagel newBagel = Parcels.unwrap(getIntent().getParcelableExtra("bagel"));
-            Log.d("TEEEEST", newBagel.getType());
             bagelList.add(newBagel);
         }
 

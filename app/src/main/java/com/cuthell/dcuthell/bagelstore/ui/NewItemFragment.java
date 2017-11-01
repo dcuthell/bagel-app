@@ -11,9 +11,13 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
+import com.cuthell.dcuthell.bagelstore.Constants;
 import com.cuthell.dcuthell.bagelstore.R;
 import com.cuthell.dcuthell.bagelstore.models.Bagel;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.parceler.Parcels;
 
@@ -81,6 +85,12 @@ public class NewItemFragment extends DialogFragment{
                 Intent intent = new Intent(context, NewOrder.class);
                 intent.putExtra("bagel", Parcels.wrap(newBagel));
                 startActivity(intent);
+
+                DatabaseReference restaurantRef = FirebaseDatabase
+                        .getInstance()
+                        .getReference(Constants.FIREBASE_CHILD_BAGELS);
+                restaurantRef.push().setValue(newBagel);
+                Toast.makeText(getContext(), "Bagel Added", Toast.LENGTH_SHORT).show();
             }
         });
 
