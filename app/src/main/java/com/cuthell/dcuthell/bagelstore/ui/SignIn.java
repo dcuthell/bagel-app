@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 public class SignIn extends AppCompatActivity {
 
     @Bind(R.id.signInButton) Button mSignInButton;
-    @Bind(R.id.usernameInputText) EditText mUsernameInputText;
+    @Bind(R.id.userEditText) EditText mUsernameInputText;
     @Bind(R.id.passwordInputText) EditText mPasswordInputText;
 
     @Override
