@@ -24,7 +24,7 @@
         app:srcCompat="@drawable/bagel_background" />
 
     <TextView
-        android:id="@+id/welcomeText"
+        android:id="@+id/welcomeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"

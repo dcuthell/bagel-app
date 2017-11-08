@@ -16,6 +16,8 @@ import android.widget.Toast;
 import com.cuthell.dcuthell.bagelstore.Constants;
 import com.cuthell.dcuthell.bagelstore.R;
 import com.cuthell.dcuthell.bagelstore.models.Bagel;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -58,6 +60,8 @@ public class NewItemFragment extends DialogFragment{
         addButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                String uid = user.getUid();
                 int bagelTypeId = bagelTypeRadioGroup.getCheckedRadioButtonId();
                 final RadioButton bagelTypeRadioButton = (RadioButton) rootView.findViewById(bagelTypeId);
                 String selection = bagelTypeRadioButton.getText().toString();
@@ -86,10 +90,14 @@ public class NewItemFragment extends DialogFragment{
                 intent.putExtra("bagel", Parcels.wrap(newBagel));
                 startActivity(intent);
 
-                DatabaseReference restaurantRef = FirebaseDatabase
+                DatabaseReference bagelRef = FirebaseDatabase
                         .getInstance()
-                        .getReference(Constants.FIREBASE_CHILD_BAGELS);
-                restaurantRef.push().setValue(newBagel);
+                        .getReference(Constants.FIREBASE_CHILD_BAGELS)
+                        .child(uid);
+                DatabaseReference pushRef = bagelRef.push();
+                String pushId = pushRef.getKey();
+                newBagel.setPushId(pushId);
+                pushRef.setValue(newBagel);
                 Toast.makeText(getContext(), "Bagel Added", Toast.LENGTH_SHORT).show();
             }
         });

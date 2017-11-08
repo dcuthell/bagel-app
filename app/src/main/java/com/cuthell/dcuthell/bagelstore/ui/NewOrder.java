@@ -19,6 +19,8 @@ import com.cuthell.dcuthell.bagelstore.R;
 import com.cuthell.dcuthell.bagelstore.adapters.FirebaseBagelViewHolder;
 import com.cuthell.dcuthell.bagelstore.models.Bagel;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -49,7 +51,10 @@ public class NewOrder extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        mBagelReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_BAGELS);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+
+        mBagelReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_BAGELS).child(uid);
         setUpFirebaseAdapter();
 
         mAddItemButton.setOnClickListener(new View.OnClickListener() {
