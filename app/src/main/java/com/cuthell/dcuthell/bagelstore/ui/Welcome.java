@@ -64,12 +64,20 @@ public class Welcome extends AppCompatActivity {
         mSignOutButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                logout();
                 Toast.makeText(Welcome.this, "You've been signed out", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(Welcome.this, MainActivity.class);
                 startActivity(intent);
-
             }
         });
+    }
+
+    private void logout() {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(Welcome.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 
     @Override

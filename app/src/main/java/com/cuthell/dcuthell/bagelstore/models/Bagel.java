@@ -13,6 +13,7 @@ import java.util.List;
 public class Bagel {
     public String type;
     public List<String> toppings = new ArrayList<>();
+    public String pushId;
 
     public Bagel(){}
 
@@ -61,5 +62,13 @@ public class Bagel {
     }
     public void addTopping(String topping) {
         this.toppings.add(topping);
+    }
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 }

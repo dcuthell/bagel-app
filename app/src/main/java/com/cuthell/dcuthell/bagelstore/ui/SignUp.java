@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -33,7 +32,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
     @Bind(R.id.createAccountButton) Button mCreateAccountButton;
     @Bind(R.id.userEditText) EditText mUserEditText;
     @Bind(R.id.emailEditText) EditText mEmailEditText;
-    @Bind(R.id.passwordInputText) EditText mPasswordEditText;
+    @Bind(R.id.passwordEditText) EditText mPasswordEditText;
     @Bind(R.id.confirmPasswordEditText) EditText mConfirmPasswordEditText;
 
 
@@ -51,29 +50,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
         mCreateAccountButton.setOnClickListener(this);
 
-
-
-//        mCreateAccountButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if(TextUtils.isEmpty(mUsernameInputText.getText().toString())){
-//                    Toast.makeText(SignUp.this, "Please enter a username", Toast.LENGTH_SHORT).show();
-//                }
-//                if(TextUtils.isEmpty(mPasswordInputText.getText().toString())){
-//                    Toast.makeText(SignUp.this, "Please enter a password", Toast.LENGTH_SHORT).show();
-//                }
-//                if(TextUtils.isEmpty(mEmailInputText.getText().toString())){
-//                    Toast.makeText(SignUp.this, "Please enter an email", Toast.LENGTH_SHORT).show();
-//                }
-//                if(!TextUtils.isEmpty(mUsernameInputText.getText().toString()) && !TextUtils.isEmpty(mPasswordInputText.getText().toString()) && !TextUtils.isEmpty(mEmailInputText.getText().toString())){
-//                    String welcomeString = "Account Created | Welcome!";
-//                    Toast.makeText(SignUp.this, welcomeString, Toast.LENGTH_LONG).show();
-//                    Intent intent = new Intent(SignUp.this, Welcome.class);
-//                    startActivity(intent);
-//                }
-//
-//            }
-//        });
     }
 
     @Override
@@ -120,6 +96,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 final FirebaseUser user = firebaseAuth.getCurrentUser();
+                Log.d("TEEEST", user+"");
                 if (user != null) {
                     Intent intent = new Intent(SignUp.this, Welcome.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
