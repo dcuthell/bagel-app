@@ -59,6 +59,7 @@ public class SignIn extends AppCompatActivity {
         mSignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+                mAuthProgressDialog.show();
                 loginWithPassword();
             }
         });
