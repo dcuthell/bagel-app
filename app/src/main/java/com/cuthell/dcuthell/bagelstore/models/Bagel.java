@@ -14,12 +14,14 @@ public class Bagel {
     public String type;
     public List<String> toppings = new ArrayList<>();
     public String pushId;
+    public String index;
 
     public Bagel(){}
 
     public Bagel(String type, ArrayList<String> toppings){
         this.type = type;
         this.toppings = toppings;
+        this.index = "not_specified";
     }
 
     public String getType() {
@@ -70,5 +72,13 @@ public class Bagel {
 
     public void setPushId(String pushId) {
         this.pushId = pushId;
+    }
+
+    public String getIndex() {
+        return index;
+    }
+
+    public void setIndex(String index) {
+        this.index = index;
     }
 }

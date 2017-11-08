@@ -3,6 +3,7 @@ package com.cuthell.dcuthell.bagelstore.adapters;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cuthell.dcuthell.bagelstore.R;
@@ -22,6 +23,7 @@ public class FirebaseBagelViewHolder extends RecyclerView.ViewHolder{
 
     @Bind(R.id.bagelTypeTextView) TextView mBagelTypeTextView;
     @Bind(R.id.bagelToppingsTextView) TextView mBagelToppingsTextView;
+    @Bind(R.id.reorderImageView) ImageView mReorderImageView;
 
     public FirebaseBagelViewHolder(View itemView){
         super(itemView);
