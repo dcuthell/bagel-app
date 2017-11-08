@@ -37,11 +37,13 @@ public class ReviewListAdapter extends RecyclerView.Adapter<ReviewListAdapter.Re
         @Bind(R.id.readMoreButton) Button mReadMoreButton;
 
         private Context context;
+        private int mOrientation;
 
         public ReviewViewHolder(View itemView){
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+            mOrientation = itemView.getResources().getConfiguration().orientation;
         }
 
         public void bindReview(final Review review){

@@ -28,6 +28,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 import org.parceler.Parcels;
 
@@ -35,6 +36,8 @@ import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+
+import static com.cuthell.dcuthell.bagelstore.Constants.FIREBASE_CHILD_BAGELS;
 
 public class NewOrder extends AppCompatActivity implements OnStartDragListener{
 
@@ -83,9 +86,11 @@ public class NewOrder extends AppCompatActivity implements OnStartDragListener{
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = user.getUid();
 
-        mBagelReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_BAGELS).child(uid);
+        Query query = FirebaseDatabase.getInstance().getReference(FIREBASE_CHILD_BAGELS).child(uid).orderByChild(Constants.FIREBASE_QUERY_INDEX);
 
-        mFirebaseAdapter = new FirebaseBagelListAdapter(Bagel.class, R.layout.bagel_list_item, FirebaseBagelViewHolder.class, mBagelReference, this, this);
+//        mBagelReference = FirebaseDatabase.getInstance().getReference(FIREBASE_CHILD_BAGELS).child(uid);
+
+        mFirebaseAdapter = new FirebaseBagelListAdapter(Bagel.class, R.layout.bagel_list_item, FirebaseBagelViewHolder.class, query, this, this);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mFirebaseAdapter);
